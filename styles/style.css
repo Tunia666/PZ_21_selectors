@@ -1,6 +1,112 @@
-* , *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; font-family: Arial, sans-serif; color: #171717; background: #f5f4ef; }
-a { color: inherit; }
-button, input, textarea, select { font: inherit; }
-body{padding:48px}.page{max-width:900px;margin:0 auto}.card{margin-top:24px;padding:24px;border:1px solid #aaa;background:#fff}.card h2{color:#171717}.card .hint{color:#6c5ce7}.filter{display:grid;gap:16px;margin-top:40px;padding:24px;background:#d8ff55}/* TODO combinators, attributes, :not/:is/:has */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  padding: 48px;
+  font-family: Arial, sans-serif;
+  color: #171717;
+  background: #f5f4ef;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content > .title {
+  color: #6c5ce7;
+  margin-top: 0;
+}
+
+.card {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #aaaaaa;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card > h2 {
+  margin-top: 0;
+  color: #171717;
+}
+
+.card p:not(.hint) {
+  color: #333333;
+}
+
+.card .hint {
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.card:is(.card--featured, .card--important) {
+  border: 2px solid #6c5ce7;
+}
+
+.card:has(a:hover) {
+  background: #f1efff;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+.filter {
+  margin-top: 24px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #aaaaaa;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label + input,
+.filter input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+}
+
+input[required] {
+  border-color: #6c5ce7;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #6c5ce7;
+  outline-offset: 2px;
+}
